@@ -1,6 +1,14 @@
+""" Posts views """
+
+# Django
+
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from datetime import datetime
 from django.shortcuts import render
+
+# Utilities
+
+from datetime import datetime
 
 # Create your views here.
 
@@ -34,9 +42,9 @@ posts = [
     }
 ]
 
-
+@login_required
 def list_posts(request):
-    
+    """ Lists existing posts """
     # content = []
     # for post in posts:
     #     content.append(f"""
